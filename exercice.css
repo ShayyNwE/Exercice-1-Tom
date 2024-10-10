@@ -1,0 +1,103 @@
+body{
+    background-color: RGB(13, 16, 21);
+    color: RGB(255, 255, 255);
+}
+
+.image{
+    width: 50%;
+}
+
+.image img{
+    width: 500px;
+    height: 500px;
+}
+
+.txt {
+    width: 50%;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+    gap:30px; 
+}
+
+figcaption{
+    visibility: hidden;
+}
+
+footer button {
+    background-color: RGB(0, 204, 255);
+    border:none; 
+    width: 400px;
+    height: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+footer button:hover {
+    background-color: RGB(16, 30, 53);
+    color: RGB(255, 255, 255);
+}
+
+.size {
+    border: 2px solid RGB(44, 47, 59);
+    width: 500px;
+    padding: 20px;
+}
+
+.size a {
+    text-decoration: none;
+    color: RGB(255, 255, 255);
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.size a:hover {
+    color: RGB(0, 204, 255);
+}
+
+.product_size {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid RGB(76, 79, 96);
+    border-radius: 5px;
+    text-align: center;
+    background-color: RGB(13, 16, 21);
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+
+input[type="radio"]:checked + label {
+    border-color: RGB(76, 79, 96); /* Garder la bordure d'origine */
+    background-color: RGB(0, 204, 255); /* Changer l'intérieur en bleu */
+    color: rgb(0, 0, 0);
+}
+
+
+input[type="radio"]:disabled + label {
+    background-color: #f0f0f0;
+    color: #ffffff;
+    border-color: RGB(0, 204, 255);
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    article{
+        flex-direction: column;
+    }
+}

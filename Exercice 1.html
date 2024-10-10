@@ -4,22 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="exercice.css">
 </head>
 <body>
+  <header>
+    <h1>Jersey Karmine Corp</h1>
+  </header>
     <article>
-        <header>
-          <h2>Worlds jersey customize 2024</h2>
-        </header>
+        <div class="image">
         <figure>
-          <img src="kc24.webp" alt="Worlds jersey">
+          <img src="kc24.webp" alt="Worlds jersey 1">
+          <img src="kc23.webp" alt="Worlds jersey 2">
           <figcaption>Worlds jersey customize 2024</figcaption>
         </figure>
-        <section>
+        </div>
+        <div class="txt">
+            <h2>Worlds jersey customize 2024</h2>
+        <section>  
+          <p>Discover the 2024 Worlds Jersey, <br>
+            worn by our players during the world championships on our different games.</p>
           <p>Price: €70</p>
+          <div class="border-box" id="box">
+            <div class="size">
+              <a href="guide.html">Size guide</a>
+                <ul class="product_size">
+                  <li class="size_1">
+                    <input type="radio" name="options" id="size_1" value="XS" >
+                    <label for="size_1">XS</label>
+                  </li>
+                  <li class="size_2">
+                    <input type="radio" name="options" id="size_2" value="S" >
+                    <label for="size_2">S</label>
+                  </li>
+                  <li class="size_3">
+                    <input type="radio" name="options" id="size_3" value="M" >
+                    <label for="size_3">M</label>
+                  </li>
+                  <li class="size_4">
+                    <input type="radio" name="options" id="size_4" value="L" >
+                    <label for="size_4">L</label>
+                  </li>
+                  <li class="size_5">
+                    <input type="radio" name="options" id="size_5" value="XL" >
+                    <label for="size_5">XL</label>
+                  </li>
+                </ul>
+            </div>
+            </div>
         </section>
         <footer>
-          <button>Add to Cart</button>
+          <button type="button">Add to cart</button>
         </footer>
+      </div>
       </article>
+<script src="script.js"></script>
 </body>
 </html>
