@@ -1,0 +1,181 @@
+body {
+    background-color: RGB(13, 16, 21);
+    color: RGB(255, 255, 255);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.image {
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+figcaption {
+    visibility: hidden;
+}
+
+.txt {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.txt h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.txt p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 10px;
+}
+
+footer button {
+    background-color: RGB(0, 204, 255);
+    border: none; 
+    width: 60%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 300px;
+}
+
+footer button:hover {
+    background-color: RGB(16, 30, 53);
+    color: RGB(255, 255, 255);
+}
+
+.size {
+    border: 2px solid RGB(44, 47, 59);
+    width: 80%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.size a {
+    text-decoration: none;
+    color: RGB(255, 255, 255);
+    text-decoration: underline;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.size a:hover {
+    color: RGB(0, 204, 255);
+}
+
+.product_size {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid RGB(76, 79, 96);
+    border-radius: 5px;
+    text-align: center;
+    background-color: RGB(13, 16, 21);
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="radio"]:checked + label {
+    border-color: RGB(0, 204, 255); /* Change border color when selected */
+    background-color: RGB(0, 204, 255); /* Change background to blue */
+    color: rgb(0, 0, 0); /* Set text color to black */
+}
+
+input[type="radio"]:disabled + label {
+    background-color: #f0f0f0;
+    color: #ffffff;
+    border-color: RGB(0, 204, 255);
+    cursor: not-allowed;
+}
+
+.perso {
+    border: 2px solid RGB(44, 47, 59);
+    width: 80%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.perso p {
+    text-decoration: none;
+    color: RGB(255, 255, 255);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.perso input {
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid RGB(66, 69, 85);
+    background-color: RGB(13, 16, 21);
+    color: white;
+    outline: none;
+    transition: border-bottom-color 0.3s;
+}
+
+.perso input:focus {
+    border-bottom: 2px solid RGB(0, 204, 255);
+}
+
+.input1 {
+    flex: 1;
+    max-width: 10%;
+}
+
+.input2 {
+    flex: 2;
+    max-width: 80%;
+}
+
+
+@media (max-width: 768px) {
+    article {
+        flex-direction: column;
+    }
+
+    .image, .txt {
+        width: 100%;
+    }
+
+    footer button {
+        width: 100%;
+    }
+}
