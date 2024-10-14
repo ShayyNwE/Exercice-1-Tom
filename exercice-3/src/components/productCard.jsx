@@ -59,7 +59,20 @@ function App() {
       totalPrice: totalPrice,
       image: "kc24.webp"
     };
+
     setCartItems([...cartItems, newItem]);
+  };
+
+  const updateItemQuantity = (index, newQuantity) => {
+    const updatedCartItems = cartItems.map((item, i) =>
+      i === index ? { ...item, quantity: newQuantity, totalPrice: (pricePerItem * newQuantity).toFixed(2) } : item
+    );
+    setCartItems(updatedCartItems);
+  };
+
+  const removeItem = (index) => {
+    const updatedCartItems = cartItems.filter((item, i) => i !== index);
+    setCartItems(updatedCartItems);
   };
 
   return (
@@ -134,7 +147,7 @@ function App() {
           <div className="price-quantity-container">
             <p className="prix">Price: €{totalPrice}</p>
             <div className="quantity-selector">
-              <button id="decrease" className="minus" onClick={handleDecrease}>-</button>
+              <button id="decrease" className="minus" onClick={handleDecrease} disabled={quantity <= 1}>-</button>
               <span className="quantity-box">
                 <span className="quantity">{quantity}</span>
               </span>
@@ -155,6 +168,8 @@ function App() {
           cartItems={cartItems} // Passer les articles du panier en tant que prop
           totalItems={cartItems.reduce((total, item) => total + item.quantity, 0)} // Nombre total de produits
           onClose={() => setCartVisible(false)}
+          updateItemQuantity={updateItemQuantity}
+          removeItem={removeItem}
         />
       )}
     </div>

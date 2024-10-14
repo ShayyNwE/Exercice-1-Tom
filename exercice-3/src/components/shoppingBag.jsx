@@ -1,11 +1,11 @@
 import React from 'react';
 import './productCard.css';
 
-const ShoppingBag = ({ cartItems, totalItems, onClose }) => {
+const ShoppingBag = ({ cartItems, onClose, updateItemQuantity, removeItem }) => {
   return (
     <div className="shopping-bag">
       <button className="close-bag" onClick={onClose}>X</button>
-      <h2>Votre panier ({totalItems})</h2>
+      <h2>Votre panier</h2>
 
       {cartItems.length === 0 ? (
         <p>Votre panier est vide</p>
@@ -14,7 +14,7 @@ const ShoppingBag = ({ cartItems, totalItems, onClose }) => {
           <div key={index} className="cart-item">
             {/* Image du produit */}
             <div className="cart-item-image">
-            <img src={item.image} alt={`${item.pseudo}`} />
+              <img src={item.image} alt={`${item.pseudo}`} />
             </div>
 
             {/* Détails du produit */}
@@ -24,6 +24,16 @@ const ShoppingBag = ({ cartItems, totalItems, onClose }) => {
               <p>Pseudo : {item.pseudo}</p>
               <p>Quantité : {item.quantity}</p>
               <p>Prix total : €{item.totalPrice}</p>
+
+              {/* Boutons pour modifier la quantité */}
+              <div className="cart-item-controls">
+                <button className="quantity-button decrease" onClick={() => updateItemQuantity(index, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                <span className="panier-button">{item.quantity}</span>
+                <button className="quantity-button increase" onClick={() => updateItemQuantity(index, item.quantity + 1)}>+</button>
+              </div>
+
+              {/* Bouton pour supprimer l'article */}
+              <button className="remove-item" onClick={() => removeItem(index)}>Retirer l'article</button>
             </div>
           </div>
         ))
